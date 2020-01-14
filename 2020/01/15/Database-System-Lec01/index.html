@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>Database System Lec01 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Introduction &amp; ER Model">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Database System Lec01">
+<meta property="og:url" content="http://yoursite.com/2020/01/15/Database-System-Lec01/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Introduction &amp; ER Model">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-14T17:01:34.000Z">
+<meta property="article:modified_time" content="2020-01-14T17:05:20.834Z">
 <meta property="article:author" content="FE">
 <meta name="twitter:card" content="summary">
   
@@ -142,16 +146,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Database-System-Lec01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Database-System-Lec01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/15/Database-System-Lec01/">Database System Lec01</a>
+    <h1 class="article-title" itemprop="name">
+      Database System Lec01
     </h1>
   
 
@@ -164,12 +166,92 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Introduction-amp-ER-Model"><a href="#Introduction-amp-ER-Model" class="headerlink" title="Introduction &amp; ER Model"></a>Introduction &amp; ER Model</h1>
-        
-          <a class="article-more-a" href="/2020/01/15/Database-System-Lec01/#more">more >></a>
-        
+        <h1 id="Introduction-amp-ER-Model"><a href="#Introduction-amp-ER-Model" class="headerlink" title="Introduction &amp; ER Model"></a>Introduction &amp; ER Model</h1><a id="more"></a>
+<h3 id="Database-DB"><a href="#Database-DB" class="headerlink" title="Database(DB)"></a><strong>Database(DB)</strong></h3><blockquote>
+<p>Non-redundant,persistent collection of logically related records/files that are structured to support various processing and retrieval needs</p>
+</blockquote>
+<h3 id="DBMS-Database-management-system"><a href="#DBMS-Database-management-system" class="headerlink" title="DBMS: Database management system"></a><strong>DBMS</strong>: Database management system</h3><h3 id="Database-System-Integrated-system-of-hardware-software-people-procedures-and-data"><a href="#Database-System-Integrated-system-of-hardware-software-people-procedures-and-data" class="headerlink" title="Database System: Integrated system of hardware software, people, procedures, and data"></a><strong>Database System</strong>: Integrated system of hardware software, people, procedures, and data</h3><hr>
+<h2 id="Data-Abstaction"><a href="#Data-Abstaction" class="headerlink" title="Data Abstaction"></a><strong>Data Abstaction</strong></h2><h3 id="Three-Level-architecture"><a href="#Three-Level-architecture" class="headerlink" title="Three Level architecture:"></a>Three Level architecture:</h3><ol>
+<li>External Level: partial schema</li>
+<li>Conceptual Level: What data are stored</li>
+<li>Internal Level: How data are stored</li>
+</ol>
+<h4 id="Data-independence"><a href="#Data-independence" class="headerlink" title="Data independence"></a>Data independence</h4><ul>
+<li>Physical data independence: Changed in level 3 will not influence level 1 and 2</li>
+<li>Logical data independence: Changed in level 2 will not influence level 1 and 3</li>
+</ul>
+<h4 id="Data-Model-Conceptual-Level-Core-of-database"><a href="#Data-Model-Conceptual-Level-Core-of-database" class="headerlink" title="Data Model(Conceptual Level): Core of database"></a>Data Model(Conceptual Level): Core of database</h4><ul>
+<li>A collection of conceptual tools for describing data, data relationships, operations, and consistency constraints</li>
+</ul>
+<hr>
+<h2 id="The-ER-Entity-Relationship-Model"><a href="#The-ER-Entity-Relationship-Model" class="headerlink" title="The ER(Entity-Relationship Model)"></a><strong>The ER(Entity-Relationship Model)</strong></h2><h3 id="Three-basic-concepts"><a href="#Three-basic-concepts" class="headerlink" title="Three basic concepts:"></a>Three basic concepts:</h3><ol>
+<li>Entity</li>
+<li>Attribute </li>
+<li>Relationship</li>
+</ol>
+<h4 id="1-Entity"><a href="#1-Entity" class="headerlink" title="1. Entity"></a>1. Entity</h4><blockquote>
+<p>A distinguishable object with an independent existence</p>
+</blockquote>
+<h4 id="2-Entity-set"><a href="#2-Entity-set" class="headerlink" title="2. Entity set"></a>2. Entity set</h4><blockquote>
+<p>A set of Entity </p>
+</blockquote>
+<h4 id="3-Attribute-Property"><a href="#3-Attribute-Property" class="headerlink" title="3. Attribute (Property)"></a>3. Attribute (Property)</h4><blockquote>
+<p>A piece of information descriping an entity</p>
+</blockquote>
+<p>e.g. Name, ID, Address, DoB are attributes of a student entity</p>
+<h5 id="Type-of-attribute"><a href="#Type-of-attribute" class="headerlink" title="Type of attribute:"></a>Type of attribute:</h5><ol>
+<li>Simple: Each entity has a single value for the attribute   e.g. SSN SEX Name </li>
+<li>Composite: The attribute may be composed of several components  </li>
+<li>Multi-valued: An entity may have multiple values for that attribute</li>
+</ol>
+<h4 id="4-Relationship"><a href="#4-Relationship" class="headerlink" title="4. Relationship"></a>4. Relationship</h4><blockquote>
+<p>an association among several entities</p>
+</blockquote>
+<h4 id="5-Relationship-set"><a href="#5-Relationship-set" class="headerlink" title="5. Relationship set"></a>5. Relationship set</h4><blockquote>
+<p>a set of relationships of the same type</p>
+</blockquote>
+<hr>
+<h3 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h3><ol>
+<li>Superkey:- a set of one or more attributes which, taken<br>together, identify uniquely an entity in an entity set</li>
+<li>Candidate key(Not Unique):  <strong>Minimum</strong> Superkey</li>
+<li>Primary key: A candidate key chosen by the DB designer</li>
+</ol>
+<hr>
+<h3 id="ER-Diagram"><a href="#ER-Diagram" class="headerlink" title="ER Diagram:"></a>ER Diagram:</h3><p><strong>Refer to lecture PPT</strong></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/Wechatpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -178,16 +260,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/15/Database-System-Lec01/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/15/Database-System-Lec01/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/15/Operating-System-Lec01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Operating System Lec01</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -207,138 +348,14 @@
 
 
 
-
   
-    <article id="post-Operating-System-Lec01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/15/Operating-System-Lec01/">Operating System Lec01</a>
-    </h1>
   
 
-        
-        <a href="/2020/01/15/Operating-System-Lec01/" class="archive-article-date">
-  	<time datetime="2020-01-14T16:45:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Lecture-1-Computer-System-amp-Operating-System-Overview"><a href="#Lecture-1-Computer-System-amp-Operating-System-Overview" class="headerlink" title="Lecture 1 Computer System &amp; Operating System Overview"></a>Lecture 1 Computer System &amp; Operating System Overview</h1>
-        
-          <a class="article-more-a" href="/2020/01/15/Operating-System-Lec01/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/15/Operating-System-Lec01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/12/hello-world/">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/2020/01/12/hello-world/" class="archive-article-date">
-  	<time datetime="2020-01-12T14:27:38.121Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/2020/01/12/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/12/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -361,8 +378,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
