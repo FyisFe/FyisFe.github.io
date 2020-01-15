@@ -16,7 +16,7 @@
 <meta property="og:description" content="Lecture 1 Computer System &amp; Operating System Overview">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-14T16:45:47.000Z">
-<meta property="article:modified_time" content="2020-01-14T17:06:37.176Z">
+<meta property="article:modified_time" content="2020-01-15T13:04:15.337Z">
 <meta property="article:author" content="FE">
 <meta name="twitter:card" content="summary">
   
@@ -254,6 +254,54 @@
 </ul>
 <hr>
 <hr>
+<h2 id="3-Interupts"><a href="#3-Interupts" class="headerlink" title="3. Interupts"></a>3. Interupts</h2><blockquote>
+<p>An event external to the currently executing process that causes a change in the normal flow of instruction execution;</p>
+</blockquote>
+<h4 id="Reasons-for-interrupts"><a href="#Reasons-for-interrupts" class="headerlink" title="Reasons for interrupts:"></a>Reasons for interrupts:</h4><p>A computer not only has CPU, other devices like keyboard, mouse and etc need CPU service( Cannot be predited). </p>
+<p>Most of them are slower than the processor <strong>-&gt;</strong> Wasteful use of the processor.</p>
+<h4 id="How-interrupts-work"><a href="#How-interrupts-work" class="headerlink" title="How interrupts work"></a>How interrupts work</h4><ul>
+<li>Each device is given a wire which is used to signal the processor</li>
+<li>When interrupt signaled, processor executes <strong>interrupt handler</strong></li>
+</ul>
+<blockquote>
+<p><strong>Stack</strong>: a certain memory area allocated as scratch space for a program to run. It is in the Main Memory</p>
+</blockquote>
+<h4 id="Uniprogramming"><a href="#Uniprogramming" class="headerlink" title="Uniprogramming"></a>Uniprogramming</h4><blockquote>
+<p>Only one program is running at a given time</p>
+</blockquote>
+<ul>
+<li>Must wait for I/O instruction to complete before proceeding</li>
+</ul>
+<h4 id="Multiprogramming-Multitasking"><a href="#Multiprogramming-Multitasking" class="headerlink" title="Multiprogramming(Multitasking)"></a>Multiprogramming(Multitasking)</h4><blockquote>
+<p>Processor can run more than one program</p>
+</blockquote>
+<ul>
+<li>When a job need to wait for I/O, the processor can swtitch to the other job</li>
+</ul>
+<hr>
+<hr>
+<h2 id="4-The-Memory-Hierarchy"><a href="#4-The-Memory-Hierarchy" class="headerlink" title="4. The Memory Hierarchy"></a>4. The Memory Hierarchy</h2><h3 id="Going-down-the-Hierarchy"><a href="#Going-down-the-Hierarchy" class="headerlink" title="Going down the Hierarchy"></a><strong>Going down the Hierarchy</strong></h3><ul>
+<li>Lower Cost</li>
+<li>Larger capacity</li>
+<li>Increasing Access time </li>
+<li>Lower frequency of access </li>
+</ul>
+<h3 id="Cache-Memory"><a href="#Cache-Memory" class="headerlink" title="Cache Memory"></a><strong>Cache Memory</strong></h3><p><em>Processor must access memory at least once per instruction cycle, but processor speed is much faster than memory access.</em></p>
+<p><strong>Solution</strong>: Copy information in use from slower to faster(but small) storage (cache) temporarily.</p>
+<p>Cache is checked first to determine whether information is there.</p>
+<ul>
+<li>If so, use data in cache</li>
+<li>If not, data copied to cache and used there</li>
+</ul>
+<h3 id="Secondary-Memory"><a href="#Secondary-Memory" class="headerlink" title="Secondary Memory"></a><strong>Secondary Memory</strong></h3><ul>
+<li>Storage devices</li>
+<li>Most commonly used: magnetic disks<ul>
+<li>Surface is divided into <strong>tracks</strong>, which are subdivided into sectors</li>
+<li>The disk controller determines the logical interaction between the device and the computer</li>
+<li>Average access time is half of the cycle </li>
+</ul>
+</li>
+</ul>
 
       
 
