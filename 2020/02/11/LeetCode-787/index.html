@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>LeetCode 787 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="LeetCode 787. Cheapest Flights Within K StopsProblemThere are n cities connected by m flights. Each fight starts from city u and arrives at v with a price w. Now given all the cities and flights, toge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 787">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/LeetCode-787/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="LeetCode 787. Cheapest Flights Within K StopsProblemThere are n cities connected by m flights. Each fight starts from city u and arrives at v with a price w. Now given all the cities and flights, toge">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-10T16:20:10.000Z">
+<meta property="article:modified_time" content="2020-02-10T16:35:35.287Z">
 <meta property="article:author" content="FyisFe">
 <meta name="twitter:card" content="summary">
   
@@ -136,184 +140,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-LeetCode-787" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      LeetCode 787
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/11/LeetCode-787/" class="archive-article-date">
+
+        
+        <a href="/2020/02/11/LeetCode-787/" class="archive-article-date">
   	<time datetime="2020-02-10T16:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/11/LeetCode-787/">LeetCode 787</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="LeetCode-787-Cheapest-Flights-Within-K-Stops"><a href="#LeetCode-787-Cheapest-Flights-Within-K-Stops" class="headerlink" title="LeetCode 787. Cheapest Flights Within K Stops"></a>LeetCode 787. Cheapest Flights Within K Stops</h1><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>There are n cities connected by m flights. Each fight starts from city u and arrives at v with a price w.</p>
+<p>Now given all the cities and flights, together with starting city src and the destination dst, your task is to find the cheapest price from src to dst with up to k stops. If there is no such route, output -1.</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<hr>
+<h3 id="Solution-1-BFS-Priority-Queue"><a href="#Solution-1-BFS-Priority-Queue" class="headerlink" title="Solution 1: BFS + Priority Queue"></a>Solution 1: BFS + Priority Queue</h3><h4 id="Wrong-Answer"><a href="#Wrong-Answer" class="headerlink" title="Wrong Answer:"></a>Wrong Answer:</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Road</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">   <span class="keyword">int</span> from;</span><br><span class="line">   <span class="keyword">int</span> to;</span><br><span class="line">   <span class="keyword">int</span> dis;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">State</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="keyword">int</span> from;</span><br><span class="line">   <span class="keyword">int</span> cost;</span><br><span class="line">   <span class="keyword">int</span> k;</span><br><span class="line">   <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> State&amp;s)<span class="keyword">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> cost &gt; s.cost;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findCheapestPrice</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; flights, <span class="keyword">int</span> src, <span class="keyword">int</span> dst, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;Road&gt; <span class="built_in">map</span>[<span class="number">100</span>];</span><br><span class="line">       <span class="keyword">int</span> res=<span class="number">10000</span>*<span class="number">100</span>+<span class="number">1</span>; </span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;flights.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">         Road tmp;</span><br><span class="line">         tmp.from=flights[i][<span class="number">0</span>];</span><br><span class="line">         tmp.to= flights[i][<span class="number">1</span>];</span><br><span class="line">         tmp.dis=flights[i][<span class="number">2</span>];</span><br><span class="line">         <span class="built_in">map</span>[tmp.from].push_back(tmp);  </span><br><span class="line">       &#125;  </span><br><span class="line">    <span class="keyword">int</span> allCost[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">            allCost[i][j]=res;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    priority_queue&lt;State&gt; que;</span><br><span class="line">        State first;</span><br><span class="line">        first.from=src;</span><br><span class="line">        first.cost=<span class="number">0</span>;</span><br><span class="line">        first.k=<span class="number">0</span>;</span><br><span class="line">    que.push(first);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!que.empty())&#123;</span><br><span class="line">        State temp=que.top();</span><br><span class="line">        que.pop();</span><br><span class="line">        <span class="keyword">if</span>(temp.k&gt;K)&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">         </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">map</span>[temp.from].<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            Road tp=<span class="built_in">map</span>[temp.from][i];</span><br><span class="line">            <span class="keyword">if</span>(temp.cost+tp.dis&lt;allCost[temp.from][tp.to])&#123;</span><br><span class="line">                allCost[temp.from][tp.to] = temp.cost+tp.dis;</span><br><span class="line">                State pushed;</span><br><span class="line">                pushed.from=tp.to;</span><br><span class="line">                pushed.cost=allCost[tp.from][tp.to];</span><br><span class="line">                pushed.k=temp.k+<span class="number">1</span>;</span><br><span class="line">                que.push(pushed);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; </span><br><span class="line">     <span class="keyword">int</span> result=allCost[src][dst];</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">         result=<span class="built_in">min</span>(result,allCost[i][dst]);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">if</span>(result==res) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">      <span class="keyword">return</span> result; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<h4 id="Reason"><a href="#Reason" class="headerlink" title="Reason:"></a>Reason:</h4><blockquote>
+<p>For example, this code will find the minmun cost from src to every node, however, due to the limit of <strong>K</strong>, so it could happen that it will cost more distance to one node but less distance to <strong>dst</strong>. This code could not handle that.</p>
+</blockquote>
+<h4 id="AC"><a href="#AC" class="headerlink" title="AC"></a>AC</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">int</span> currentK;</span><br><span class="line">    <span class="keyword">int</span> cost;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node&amp; other) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>-&gt;cost &lt; other.cost) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findCheapestPrice</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; flights, <span class="keyword">int</span> src, <span class="keyword">int</span> dst, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&gt; myMap;  </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; flights.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> src_ = flights[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> dst_ = flights[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> price_ = flights[i][<span class="number">2</span>];</span><br><span class="line">            myMap[src_].push_back(&#123;dst_, price_&#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Node firstNode = &#123;src, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        priority_queue&lt;Node&gt; myPriQ;</span><br><span class="line"></span><br><span class="line">        myPriQ.push(firstNode);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> lowestCost = <span class="number">-1</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">while</span> (!myPriQ.empty()) &#123;</span><br><span class="line">            Node tmpNode = myPriQ.top();</span><br><span class="line">            myPriQ.pop(); </span><br><span class="line">            <span class="keyword">if</span> (tmpNode.currentK &gt; K) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (tmpNode.index == dst) &#123;</span><br><span class="line">                lowestCost = tmpNode.cost;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> tmpCost = tmpNode.cost;</span><br><span class="line">            <span class="keyword">int</span> tmpSrc = tmpNode.index;</span><br><span class="line">            <span class="keyword">int</span> tmpK = tmpNode.currentK;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; tmpVec  = myMap[tmpSrc];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> c = <span class="number">0</span>; c &lt; tmpVec.<span class="built_in">size</span>(); c++) &#123;</span><br><span class="line">                Node newNode;</span><br><span class="line"></span><br><span class="line">                newNode.index = tmpVec[c][<span class="number">0</span>];</span><br><span class="line">                newNode.currentK = (tmpVec[c][<span class="number">0</span>] == dst) ? tmpK : tmpK + <span class="number">1</span>;</span><br><span class="line">                newNode.cost = tmpCost + tmpVec[c][<span class="number">1</span>];                </span><br><span class="line">                myPriQ.push(newNode);                </span><br><span class="line">            &#125;            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> lowestCost;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-2-DP"><a href="#Solution-2-DP" class="headerlink" title="Solution 2: DP"></a>Solution 2: DP</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findCheapestPrice</span><span class="params">(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; flights, <span class="keyword">int</span> src, <span class="keyword">int</span> dst, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        K = <span class="built_in">min</span>(K, n - <span class="number">2</span>);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt; dp(n, INF);</span><br><span class="line">        dp[src] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt;= K; ++k) &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt; dp1 = dp;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; e: flights) &#123;</span><br><span class="line">                dp1[e[<span class="number">1</span>]] = <span class="built_in">min</span>(dp1[e[<span class="number">1</span>]], dp[e[<span class="number">0</span>]] + e[<span class="number">2</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            swap(dp1, dp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[dst] == INF ? <span class="number">-1</span> : dp[dst];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/Wechatpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/11/LeetCode-787/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/10/LeetCode-649/" class="archive-article-date">
-  	<time datetime="2020-02-09T18:12:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/10/LeetCode-649/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode 649</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/10/LeetCode-649/">LeetCode 649</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/17/Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99/" class="archive-article-date">
-  	<time datetime="2020-01-16T17:08:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/17/Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99/">Java 数据类型与运算规则</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/15/Database-System-Lec01/" class="archive-article-date">
-  	<time datetime="2020-01-14T17:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/15/Database-System-Lec01/">Database System Lec01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/15/Operating-System-Lec01/" class="archive-article-date">
-  	<time datetime="2020-01-14T16:45:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/15/Operating-System-Lec01/">Operating System Lec01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/12/hello-world/" class="archive-article-date">
-  	<time datetime="2020-01-12T14:27:38.121Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/12/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -336,8 +334,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
